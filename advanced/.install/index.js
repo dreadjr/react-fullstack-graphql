@@ -27,7 +27,7 @@ module.exports = async ({ project, projectDir }) => {
 
   replaceInFiles(['.env'], `__PRISMA_CLUSTER__`, cluster)
   replaceInFiles(
-    ['database/prisma.yml'],
+    ['server/database/prisma.yml'],
     `cluster: ${cluster}`,
     'cluster: ${env:PRISMA_CLUSTER}',
   )
