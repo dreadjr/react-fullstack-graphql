@@ -10,7 +10,7 @@ module.exports = async ({ project, projectDir }) => {
   const templateName = 'graphql-boilerplate'
 
   replaceInFiles(
-    ['src/index.js', 'package.json', 'database/prisma.yml'],
+    ['server/src/index.js', 'server/package.json', 'server/database/prisma.yml'],
     templateName,
     project,
   )
@@ -27,7 +27,7 @@ module.exports = async ({ project, projectDir }) => {
 
   replaceInFiles(['.env'], `__PRISMA_CLUSTER__`, cluster)
   replaceInFiles(
-    ['database/prisma.yml'],
+    ['server/database/prisma.yml'],
     `cluster: ${cluster}`,
     'cluster: ${env:PRISMA_CLUSTER}',
   )
